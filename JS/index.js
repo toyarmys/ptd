@@ -105,19 +105,26 @@ $(function() {
 });
 //end
 
-//Effect pagination
-var a = document.getElementsByClassName("prev-next");
-var b = document.getElementsByClassName("prev-next-btn");
-$(function(){
-for (var i = 0; i < b.length; i++) {
-  b[i].addEventListener("click", function() {
-  var currents = document.getElementsByClassName("activate");
-  currents[0].className = currents[0].className.replace(" activate", "");
-  this.className += " activate";
-    });
-  }
-});
-// end
+$(document).ready(function(){
+    pagenum = 1;
+    function AutoRotate() {
+       var myele = null;
+       var allElements = document.getElementsByTagName('label');
+       for (var i = 0, n = allElements.length; i < n; i++) {
+         var myfor = allElements[i].getAttribute('for');
+         if ((myfor !== null) && (myfor == ('slide_2_' + pagenum))) {
+           allElements[i].click();
+           break;
+         }
+       }
+       if (pagenum == 4) {
+         pagenum = 1;
+       } else {
+         pagenum++;
+       }
+    }
+    setInterval(AutoRotate, 10000000000000);
+  });
 
 // Save information from guest
 function saveFile(){
