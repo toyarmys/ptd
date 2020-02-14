@@ -88,7 +88,7 @@ header > .sidenav ul li a:hover{
 	font-weight: 600;
 }
 
-.header-info button{
+.header-info button.btn{
 	border: none;
 	outline: none;
 	cursor: pointer;
@@ -104,7 +104,7 @@ header > .sidenav ul li a:hover{
 	transition: .4s linear;
 }
 
-.header-info button:hover{
+.header-info button.btn:hover{
 	color: tomato;
 	transition: 1s;
 	border: none;
@@ -699,7 +699,7 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 	height:8px;
 	margin:0 2px;
 	display:inline-block;
-	background:#999; /* Change controls background color */
+	background:#fff;
 	border-radius:4px;
 	-moz-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -711,8 +711,9 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 	background:#000; /* Change controls background color when mouse click */
 }
 .testimonial_2 {
-	font-size: 16px !important;
-	color: #333; /* Change testimonial paragraph text color */
+	font-size: 1em;
+	font-family: 'Montserrat', sans-serif;
+	color: #fff;
 	padding: 30px 30px 23px;
 }
 .content_2 {
@@ -742,13 +743,13 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 	margin-left: 30px;
 }
 .author_2 h3 {
-	color: #333; /* Change author text color */
+	color: #fff; /* Change author text color */
 	font-size: 13px;
 	font-weight: 600px;
 	padding: 0 0 5px;
 }
 .author_2 h4 {
-	color: #333; /* Change author text color */
+	color: #fff; /* Change author text color */
 	font-size: 12px;
 	font-weight: 400;
 	padding: 0 0 5px;
@@ -1131,6 +1132,12 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 		border-bottom: 1px solid rgba(255,255,255,0.3);
 	}
 
+	#footer #map{
+		width: 100%;
+		margin-top: 0;
+		margin-left: 0;
+	}
+
 }
 
 @media (min-width: 480px) and (max-width: 768px){
@@ -1458,6 +1465,12 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 		font-size: 2.5em;
 	}
 
+	#footer #map{
+		width: 85%;
+		margin-top: 23em;
+		margin-left: -41em;
+	}
+
 }
 
 @media (min-width: 769px) and (max-width: 1023px){
@@ -1783,6 +1796,12 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 
 	#footer .social-links i{
 		font-size: 2.5em;
+	}
+
+	#footer #map{
+		width: 85%;
+		margin-top: 23em;
+		margin-left: -41em;
 	}
 }
 
@@ -2124,6 +2143,12 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 	#footer .social-links i{
 		font-size: 2.5em;
 	}
+
+	#footer #map{
+		width: 80%;
+		margin-top: 23em;
+		margin-left: -50em;
+	}
 }
 
 @media (min-width: 1200px) and (max-width: 1440px){
@@ -2458,6 +2483,11 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 	#footer .social-links i{
 		font-size: 2.5em;
 	}
+	#footer #map{
+		width: 80%;
+		margin-top: 23em;
+		margin-left: -70em;
+	}
 }
 
 @media (min-width: 1441px) and (max-width: 2559px){
@@ -2543,7 +2573,7 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-start;
-		margin-bottom: 30em;
+		margin-bottom: 25em;
 	}
 
 	.header-info p.second-para{
@@ -3149,6 +3179,12 @@ div.project-img1:hover div.img-01::before,div.project-img1:hover div.img-02::bef
 
 	#footer .social-links i{
 		font-size: 2.5em;
+	}
+	#footer #map{
+		width: 50%;
+		height: 30em;
+		margin-top: 15em;
+		margin-left: -108em;
 	}
 }
 

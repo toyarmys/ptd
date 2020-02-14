@@ -123,17 +123,31 @@ $(document).ready(function(){
          pagenum++;
        }
     }
-    setInterval(AutoRotate, 10000000000000);
+    setInterval(AutoRotate, 5000);
   });
 
 // Save information from guest
-function saveFile(){
+function saveFile(e){
   var name = document.getElementById("Name").value;
   var email = document.getElementById("Mail").value;
   var title = document.getElementById("Title").value;
   var comment = document.getElementById("Comment").value;
-  if(name == "" || email == ""){
-    alert("Bạn chưa nhập tên hoặc email");
+  var atposition=email.indexOf("@");  
+  var dotposition=email.lastIndexOf(".");  
+  if(name == "" && email ==""){
+    alert("Bạn chưa nhập tên và email");
+    return false;
+  }
+  else if(name == ""){
+    alert("Bạn chưa nhập tên");
+    return false;
+  }
+  else if(email == ""){
+    alert("Bạn chưa nhập email");
+    return false;
+  }
+  else if(atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){
+    alert("email không hợp lệ");
     return false;
   }
   else{
@@ -152,6 +166,9 @@ function saveFile(){
 
         if (window.webkitURL != null) {
             newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+            alert('Thanks!');
+            var form = document.getElementById('form1');
+            form.reset();
         }
         else {
             newLink.href = window.URL.createObjectURL(textToBLOB);
