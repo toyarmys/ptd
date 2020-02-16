@@ -29,11 +29,11 @@ for (var i = 0; i < btns.length; i++) {
 
 //Show more
 $(function () {
-    $('.project-img1 .gallery li:lt(4)').show();
-    $('.less').hide();
-    var items =  12;
-    var shown =  4;
-    $('.more').click(function () {
+  $('.project-img1 .gallery li:lt(4)').show();
+  $('.less').hide();
+  var items =  12;
+  var shown =  4;
+  $('.more').click(function () {
         $('.less').show();
         shown = $('.project-img1 .gallery li:visible').length+4;
         if(shown< items) {
@@ -42,12 +42,12 @@ $(function () {
           $('.project-img1 .gallery li:lt('+items+')').show(300);
           $('.more').hide();
         }
-    });
-    $('.less').click(function () {
+  });
+  $('.less').click(function () {
         $('.project-img1 .gallery li').not(':lt(4)').hide(300);
         $('.more').show();
         $('.less').hide();
-    });
+  });
 });
 //end
 
@@ -72,41 +72,19 @@ $(function () {
 });
 //end
 
-//Pagination
-var page = 1;
-
-function showPage(page) {
-    $('.pagination .post:not(#page'+page+')').hide();
-    // $('.pagination .post#page'+page).show();
+//init map
+var map;
+function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: 21.0112736, lng: 105.7981708},
+              zoom: 8
+            });
 }
-
-function prevPage() {
-    if (page == 1) {
-        page = $('.pagination .post').length;
-    } else {
-        page--;
-    }
-    showPage(page);
-}
-
-function nextPage() {
-    if (page == $('.pagination .post').length) {
-        page = 1;
-    } else {
-        page++;
-    }
-    showPage(page);
-}
-
-$(function() {
-    showPage(page);
-    $('#prev').click(prevPage);
-    $('#next').click(nextPage);
-});
 //end
 
-$(document).ready(function(){
-    pagenum = 1;
+// testimonials
+$(function(){
+  pagenum = 1;
     function AutoRotate() {
        var myele = null;
        var allElements = document.getElementsByTagName('label');
@@ -124,7 +102,8 @@ $(document).ready(function(){
        }
     }
     setInterval(AutoRotate, 5000);
-  });
+});
+//end 
 
 // Save information from guest
 function saveFile(e){
@@ -195,19 +174,21 @@ $(document).on('click', 'a[href^="#"]', function(event) {
 var clicks = 0;
 var clicksHeart = 0;
 var clicksUnlike = 0;
-    function onClick() {
-        clicks += 1;
-        document.getElementById("clicks").innerHTML = clicks;
-    };
+function onClick() {
+  clicks += 1;
+  document.getElementById("clicks").innerHTML = clicks;
+};
 
-    function onClickHeart(){
-      clicksHeart += 1;
-        document.getElementById("clicksHeart").innerHTML = clicksHeart;
-    };
-
-    function onClickUnlike(){
-      clicksUnlike += 1;
-        document.getElementById("clicksUnlike").innerHTML = clicksUnlike;
-    };
+function onClickHeart(){
+  clicksHeart += 1;
+  document.getElementById("clicksHeart").innerHTML = clicksHeart;
+};
+function onClickUnlike(){
+  clicksUnlike += 1;
+  document.getElementById("clicksUnlike").innerHTML = clicksUnlike;
+};
 
 // end
+$(".sidenav #menu li a").click(function () {
+    $("#menu").toggleClass("open");
+  });
